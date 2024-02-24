@@ -1,0 +1,66 @@
+# Android Studio
+*.iml
+/.gradle
+/local.properties
+/.idea/workspace.xml
+/.idea/libraries
+
+# Gradle
+/.gradle/
+/build/
+
+# Android
+/captures/
+
+# IntelliJ
+*.iws
+*.ipr
+*.iws.iml
+
+# External dependencies
+/.idea/
+
+# Proguard
+proguard-rules.pro
+
+# Logs
+*.log
+
+# Android Studio Navigation editor temp files
+.navigation/
+
+# Android Studio captures folder
+captures/
+
+# Windows thumbnail db
+Thumbs.db
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows shortcuts
+Desktop.ini
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must end with two \r
+Icon
+
+# Thumbnails
+._*
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
+# Directory config file
+.DS_Store?
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
