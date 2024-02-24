@@ -1,4 +1,4 @@
-package com.rcb.poc.app.boimama.app;
+package in.boimama.app.android;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -16,7 +16,8 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
         new Handler(Looper.getMainLooper())
-                .postDelayed(() -> startActivity(new Intent(SplashActivity.this,
-                        MainActivity.class)), 3000);
+                .postDelayed(() -> startActivity(
+                        new Intent(SplashActivity.this, MainActivity.class)
+                ), 3000);
     }
 }

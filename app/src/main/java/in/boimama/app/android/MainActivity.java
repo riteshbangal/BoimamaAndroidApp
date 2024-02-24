@@ -1,4 +1,4 @@
- package com.rcb.poc.app.boimama.app;
+ package in.boimama.app.android;
 
 import androidx.appcompat.app.AppCompatActivity;
 

@@ -1,4 +1,4 @@
-package com.rcb.poc.app.boimama.app;
+package in.boimama.app.android;
 
 import android.content.Context;
 
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("com.rcb.poc.app.boimama.app", appContext.getPackageName());
+        assertEquals("in.boimama.app.android", appContext.getPackageName());
     }
 }
