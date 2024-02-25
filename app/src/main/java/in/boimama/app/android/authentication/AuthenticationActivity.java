@@ -1,9 +1,13 @@
 package in.boimama.app.android.authentication;
 
+import static android.widget.Toast.makeText;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
+import android.widget.Toast;
 
 import in.boimama.app.android.SplashActivity;
 
@@ -11,25 +15,30 @@ import in.boimama.app.android.databinding.ActivityAuthenticationBinding;
 
 public class AuthenticationActivity extends AppCompatActivity {
 
+    private ActivityAuthenticationBinding binding;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ActivityAuthenticationBinding activityAuthenticationBinding = ActivityAuthenticationBinding.inflate(getLayoutInflater());
-        setContentView(activityAuthenticationBinding.getRoot());
+        binding = ActivityAuthenticationBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
-        activityAuthenticationBinding.buttonLogin
+        binding.buttonLogin
                 .setOnClickListener(view -> startActivity(
-                        new Intent(AuthenticationActivity.this, LoginActivity.class))
+                        new Intent(this, LoginActivity.class))
                 );
 
-        activityAuthenticationBinding.buttonRegister
-                .setOnClickListener(view -> startActivity(
-                        new Intent(AuthenticationActivity.this, SplashActivity.class))
-                );
+        binding.buttonRegister
+                .setOnClickListener(view -> {
+                    //startActivity(new Intent(this, SplashActivity.class));
 
-        activityAuthenticationBinding.buttonGuestUser
+                    // Show a Toast message for 2 seconds
+                    makeText(getApplicationContext(), "This feature is coming soon", Toast.LENGTH_SHORT).show();
+                });
+
+        binding.buttonGuestUser
                 .setOnClickListener(view -> startActivity(
-                        new Intent(AuthenticationActivity.this, GuestLoginActivity.class))
+                        new Intent(this, GuestLoginActivity.class))
                 );
     }
 }

@@ -6,13 +6,114 @@
     android:layout_height="match_parent"
     tools:context=".authentication.LoginActivity">
 
-    <EditText
-        android:id="@+id/editTextText"
+    <ImageView
+        android:id="@+id/imageViewBannerLogo"
+        android:layout_width="320dp"
+        android:layout_height="125dp"
+        app:layout_constraintBottom_toTopOf="@+id/appDesignerText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.10"
+        app:srcCompat="@drawable/boimama_banner_logo" />
+
+    <TextView
+        android:id="@+id/textViewBannerHeading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ems="10"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/love_ya_like_a_sister"
+        android:text="@string/textViewBannerHeading"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewBannerLogo"
+        app:layout_constraintStart_toStartOf="@+id/imageViewBannerLogo"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewBannerLogo" />
+
+    <TextView
+        android:id="@+id/textViewBannerMessage"
+        android:layout_width="380dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="@string/textViewBannerMessage"
+        app:layout_constraintEnd_toEndOf="@+id/textViewBannerHeading"
+        app:layout_constraintStart_toStartOf="@+id/textViewBannerHeading"
+        app:layout_constraintTop_toBottomOf="@+id/textViewBannerHeading" />
+
+    <EditText
+        android:id="@+id/editTextUserName"
+        android:layout_width="270dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/edit_text_shape"
+        android:hint="@string/editTextUserNamePlaceholder"
         android:inputType="text"
-        android:text="Name"
-        tools:layout_editor_absoluteX="126dp"
-        tools:layout_editor_absoluteY="295dp" />
+        android:paddingStart="20sp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/app_dark_grey"
+        app:cornerRadius="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/textViewBannerMessage"
+        app:layout_constraintStart_toStartOf="@+id/textViewBannerMessage"
+        app:layout_constraintTop_toBottomOf="@+id/textViewBannerMessage" />
+
+    <EditText
+        android:id="@+id/editTextPassword"
+        android:layout_width="270dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/edit_text_shape"
+        android:hint="@string/editTextPasswordPlaceholder"
+        android:inputType="textPassword"
+        android:paddingStart="20sp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/app_dark_grey"
+        app:cornerRadius="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/editTextUserName"
+        app:layout_constraintStart_toStartOf="@+id/editTextUserName"
+        app:layout_constraintTop_toBottomOf="@+id/editTextUserName" />
+
+    <Button
+        android:id="@+id/buttonLogin"
+        android:backgroundTint="@color/blue"
+        android:layout_width="270dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/inter"
+        android:textStyle="bold"
+        android:text="@string/buttonLogin"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:cornerRadius="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/editTextPassword"
+        app:layout_constraintStart_toStartOf="@+id/editTextPassword"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
+
+    <TextView
+        android:id="@+id/textViewBackHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/inter"
+        android:text="@string/textViewBackHome"
+        android:textColor="@color/blue"
+        android:layout_centerInParent="true"
+        app:layout_constraintEnd_toEndOf="@+id/buttonLogin"
+        app:layout_constraintStart_toStartOf="@+id/buttonLogin"
+        app:layout_constraintTop_toBottomOf="@+id/buttonLogin" />
+
+    <TextView
+        android:id="@+id/appDesignerText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/love_ya_like_a_sister"
+        android:gravity="center"
+        android:text="@string/appDesignerText"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.95" />
+    
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -45,7 +45,7 @@
         android:id="@+id/editTextGuestDisplayName"
         android:layout_width="270dp"
         android:layout_height="60dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="40dp"
         android:background="@drawable/edit_text_shape"
         android:hint="@string/editTextGuestDisplayNamePlaceholder"
         android:inputType="text"
@@ -62,8 +62,9 @@
         android:id="@+id/buttonGuestUser"
         android:layout_width="270dp"
         android:layout_height="60dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:fontFamily="@font/inter"
+        android:textStyle="bold"
         android:text="@string/buttonGuestUser"
         android:textColor="@color/white"
         android:textSize="20sp"
@@ -71,6 +72,36 @@
         app:layout_constraintEnd_toEndOf="@+id/editTextGuestDisplayName"
         app:layout_constraintStart_toStartOf="@+id/editTextGuestDisplayName"
         app:layout_constraintTop_toBottomOf="@+id/editTextGuestDisplayName" />
+
+    <TextView
+        android:id="@+id/textViewForAlreadyUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/love_ya_like_a_sister"
+        android:text="@string/textViewForAlreadyUser"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/buttonGuestUser"
+        app:layout_constraintStart_toStartOf="@+id/buttonGuestUser"
+        app:layout_constraintTop_toBottomOf="@+id/buttonGuestUser" />
+
+    <Button
+        android:id="@+id/buttonLogin"
+        android:layout_width="270dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="15dp"
+        android:backgroundTint="@color/app_light_grey"
+        android:fontFamily="@font/inter"
+        android:text="@string/buttonLogin"
+        android:textColor="@color/app_dark_grey"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:cornerRadius="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/textViewForAlreadyUser"
+        app:layout_constraintStart_toStartOf="@+id/textViewForAlreadyUser"
+        app:layout_constraintTop_toBottomOf="@+id/textViewForAlreadyUser"
+        app:strokeColor="@color/app_dark_grey"
+        app:strokeWidth="2dp" />
 
     <TextView
         android:id="@+id/appDesignerText"

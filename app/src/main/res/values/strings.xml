@@ -10,4 +10,8 @@
     <string name="textViewOr">Or</string>
     <string name="buttonGuestUser">Continue as Guest</string>
     <string name="editTextGuestDisplayNamePlaceholder">Enter your name</string>
+    <string name="textViewForAlreadyUser">Already an user?</string>
+    <string name="editTextUserNamePlaceholder">Enter Username</string>
+    <string name="editTextPasswordPlaceholder">Enter your password</string>
+    <string name="textViewBackHome"><![CDATA[> Back to Home]]></string>
 </resources>
