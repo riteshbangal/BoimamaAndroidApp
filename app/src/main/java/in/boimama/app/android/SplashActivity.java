@@ -8,7 +8,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 
-import in.boimama.app.android.authentication.WelcomeActivity;
+import in.boimama.app.android.authentication.AuthenticationActivity;
 
 @SuppressLint("CustomSplashScreen")
 public class SplashActivity extends AppCompatActivity {
@@ -19,7 +19,7 @@ public class SplashActivity extends AppCompatActivity {
         setContentView(R.layout.activity_splash);
         new Handler(Looper.getMainLooper())
                 .postDelayed(() -> startActivity(
-                        new Intent(SplashActivity.this, WelcomeActivity.class)
+                        new Intent(SplashActivity.this, AuthenticationActivity.class)
                 ), 3000);
     }
 }

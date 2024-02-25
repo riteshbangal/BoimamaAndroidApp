@@ -7,7 +7,8 @@
     <color name="blue">#00A3FF</color>
     <color name="light_white">#EFEFEF</color>
 
-    <color name="dark_grey">#C1B09E</color>
-    <color name="app_blue">#4B61EC</color>
+    <color name="app_dark_grey">#728197</color>
+    <color name="app_light_grey">#EFEFEF</color>
+    <color name="app_blue">#667FEA</color>
 
 </resources>

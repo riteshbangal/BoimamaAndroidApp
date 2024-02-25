@@ -9,4 +9,5 @@
     <string name="buttonRegister">Register</string>
     <string name="textViewOr">Or</string>
     <string name="buttonGuestUser">Continue as Guest</string>
+    <string name="editTextGuestDisplayNamePlaceholder">Enter your name</string>
 </resources>
