@@ -1,4 +1,12 @@
 <resources>
     <string name="app_name">Boimama App</string>
     <string name="brandName">Boimama</string>
+    <string name="textViewBannerMessage">হাসির গল্প, প্রেমের গল্প, রোমাঞ্চকর অ্যাডভেঞ্চারের গল্প, গায়ে কাঁটা দেওয়া ভূতের গল্প, রহস্য গল্প, \'বইমামা\'-তে আছে নানারকমের স্বাদ।</string>
+    <string name="textViewBannerHeading">বাংলা গল্প পড়ুন, বইমামার সাথে!</string>
+    <string name="appDesignerText">Design by\nCodeforGeeks</string>
+    <string name="buttonLogin">Login</string>
+    <string name="textViewForNewUser">New here?</string>
+    <string name="buttonRegister">Register</string>
+    <string name="textViewOr">Or</string>
+    <string name="buttonGuestUser">Continue as Guest</string>
 </resources>

@@ -6,4 +6,8 @@
     <color name="red">#FF0000</color>
     <color name="blue">#00A3FF</color>
     <color name="light_white">#EFEFEF</color>
+
+    <color name="dark_grey">#C1B09E</color>
+    <color name="app_blue">#4B61EC</color>
+
 </resources>
