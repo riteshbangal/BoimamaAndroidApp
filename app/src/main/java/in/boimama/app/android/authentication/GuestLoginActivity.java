@@ -11,7 +11,7 @@ import android.os.Bundle;
 import android.widget.Toast;
 
 import in.boimama.app.android.databinding.ActivityGuestLoginBinding;
-import in.boimama.app.android.story.StoriesActivity;
+import in.boimama.app.android.story.ListStoriesActivity;
 
 public class GuestLoginActivity extends AppCompatActivity {
 
@@ -33,7 +33,7 @@ public class GuestLoginActivity extends AppCompatActivity {
                         makeText(getApplicationContext(), "Please enter your name!", Toast.LENGTH_SHORT).show();
                     } else {
                         System.out.println("Guest user: " + guestUserName);
-                        startActivity(new Intent(GuestLoginActivity.this, StoriesActivity.class));
+                        startActivity(new Intent(GuestLoginActivity.this, ListStoriesActivity.class));
                     }
 
                 });

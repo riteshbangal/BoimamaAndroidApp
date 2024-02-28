@@ -15,7 +15,7 @@
     <string name="editTextPasswordPlaceholder">Enter your password</string>
     <string name="textViewBackHome"><![CDATA[> Back to Home]]></string>
     <string name="textViewLatestStoriesHeading">Latest Stories</string>
-    <string name="textViewStoryTitle"> This is my first story title This is my first story title This is my first story title</string>
+    <string name="textViewStoryTitle"> This is my first story tis my first story tis my first story tis my first story tis my first story tis my first story title </string>
     <string name="buttonReadMore">Read More</string>
     <string name="textViewLikesCount">20</string>
 </resources>

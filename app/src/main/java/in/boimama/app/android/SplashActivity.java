@@ -9,7 +9,8 @@ import android.os.Handler;
 import android.os.Looper;
 
 import in.boimama.app.android.authentication.AuthenticationActivity;
-import in.boimama.app.android.story.StoriesActivity;
+import in.boimama.app.android.story.ListStoriesActivity;
+import in.boimama.app.android.story.ReadStoryActivity;
 
 @SuppressLint("CustomSplashScreen")
 public class SplashActivity extends AppCompatActivity {
@@ -20,8 +21,9 @@ public class SplashActivity extends AppCompatActivity {
         setContentView(R.layout.activity_splash);
         new Handler(Looper.getMainLooper())
                 .postDelayed(() -> startActivity(
-                        // new Intent(SplashActivity.this, AuthenticationActivity.class) // TODO: Temporary
-                        new Intent(SplashActivity.this, StoriesActivity.class)
+                        // new Intent(this, AuthenticationActivity.class) // TODO: Temporary
+                         new Intent(this, ListStoriesActivity.class)
+//                        new Intent(this, ReadStoryActivity.class)
                 ), 1000);
     }
 }

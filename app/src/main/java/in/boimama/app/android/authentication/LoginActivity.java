@@ -11,7 +11,7 @@ import android.os.Bundle;
 import android.widget.Toast;
 
 import in.boimama.app.android.databinding.ActivityLoginBinding;
-import in.boimama.app.android.story.StoriesActivity;
+import in.boimama.app.android.story.ListStoriesActivity;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -39,7 +39,7 @@ public class LoginActivity extends AppCompatActivity {
                         makeText(getApplicationContext(), "Please enter your password!", Toast.LENGTH_SHORT).show();
                     } else if (userName.equalsIgnoreCase("admin") && password.equalsIgnoreCase("admin")) {
                         makeText(getApplicationContext(), "Success!", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(this, StoriesActivity.class));
+                        startActivity(new Intent(this, ListStoriesActivity.class));
                     } else {
                         makeText(getApplicationContext(), "Invalid credentials!", Toast.LENGTH_SHORT).show();
                     }

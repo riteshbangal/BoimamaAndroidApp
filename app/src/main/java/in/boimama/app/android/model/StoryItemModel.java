@@ -1,6 +1,8 @@
 package in.boimama.app.android.model;
 
-public class StoryItemModel {
+import java.io.Serializable;
+
+public class StoryItemModel implements Serializable {
     private String title;
 
     private String content;
