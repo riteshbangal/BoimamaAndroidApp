@@ -10,6 +10,7 @@ import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import in.boimama.app.android.MainActivity;
 import in.boimama.app.android.databinding.ActivityGuestLoginBinding;
 
 public class GuestLoginActivity extends AppCompatActivity {
@@ -32,7 +33,7 @@ public class GuestLoginActivity extends AppCompatActivity {
                         makeText(getApplicationContext(), "Please enter your name!", Toast.LENGTH_SHORT).show();
                     } else {
                         System.out.println("Guest user: " + guestUserName);
-                        //startActivity(new Intent(GuestLoginActivity.this, GuestLoginActivity.class));
+                        startActivity(new Intent(GuestLoginActivity.this, MainActivity.class));
                     }
 
                 });

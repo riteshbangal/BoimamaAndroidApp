@@ -6,4 +6,8 @@
     </style>
 
     <style name="Theme.BoimamaApp" parent="Base.Theme.BoimamaApp" />
+
+    <style name="round" parent="" >
+        <item name="cornerSize">50%</item>
+    </style>
 </resources>
