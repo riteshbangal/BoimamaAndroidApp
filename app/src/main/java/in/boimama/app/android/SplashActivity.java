@@ -9,6 +9,7 @@ import android.os.Handler;
 import android.os.Looper;
 
 import in.boimama.app.android.authentication.AuthenticationActivity;
+import in.boimama.app.android.story.StoriesActivity;
 
 @SuppressLint("CustomSplashScreen")
 public class SplashActivity extends AppCompatActivity {
@@ -20,7 +21,7 @@ public class SplashActivity extends AppCompatActivity {
         new Handler(Looper.getMainLooper())
                 .postDelayed(() -> startActivity(
                         // new Intent(SplashActivity.this, AuthenticationActivity.class) // TODO: Temporary
-                        new Intent(SplashActivity.this, MainActivity.class)
+                        new Intent(SplashActivity.this, StoriesActivity.class)
                 ), 1000);
     }
 }

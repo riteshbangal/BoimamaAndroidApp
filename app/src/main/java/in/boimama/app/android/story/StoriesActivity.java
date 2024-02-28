@@ -1,30 +1,30 @@
- package in.boimama.app.android;
+ package in.boimama.app.android.story;
 
-import static android.widget.Toast.makeText;
+ import static android.widget.Toast.makeText;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
+ import android.os.Bundle;
+ import android.widget.Toast;
 
-import android.os.Bundle;
-import android.widget.Toast;
+ import androidx.annotation.NonNull;
+ import androidx.appcompat.app.AppCompatActivity;
+ import androidx.recyclerview.widget.LinearLayoutManager;
+ import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.ArrayList;
-import java.util.List;
+ import java.util.ArrayList;
+ import java.util.List;
 
-import in.boimama.app.android.adapter.StoryAdapter;
-import in.boimama.app.android.databinding.ActivityMainBinding;
-import in.boimama.app.android.model.StoryItemModel;
+ import in.boimama.app.android.adapter.StoryAdapter;
+ import in.boimama.app.android.databinding.ActivityStoriesBinding;
+ import in.boimama.app.android.model.StoryItemModel;
 
- public class MainActivity extends AppCompatActivity {
+ public class StoriesActivity extends AppCompatActivity {
 
-     private ActivityMainBinding binding;
+     private ActivityStoriesBinding binding;
 
      @Override
     protected void onCreate(Bundle savedInstanceState) {
          super.onCreate(savedInstanceState);
-         binding = ActivityMainBinding.inflate(getLayoutInflater());
+         binding = ActivityStoriesBinding.inflate(getLayoutInflater());
          setContentView(binding.getRoot());
 
          List<StoryItemModel> items = getDummyItems(); // TODO: Set dummy data (stories) into recycler view

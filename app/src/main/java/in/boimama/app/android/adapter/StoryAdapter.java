@@ -68,8 +68,8 @@ public class StoryAdapter extends RecyclerView.Adapter<StoryAdapter.StoryViewHol
 
             Glide.with(binding.imageViewAuthorImage.getContext())
                     .load(storyItemModel.getImageUrl())
-                    .placeholder(R.drawable.author)
-                    .error(R.drawable.author)
+                    .placeholder(R.drawable.no_image)
+                    .error(R.drawable.no_image)
                     .listener(new RequestListener<Drawable>() {
                         @Override
                         public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {
