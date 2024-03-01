@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/readStoryConstraintLayout"
     tools:context=".story.ReadStoryActivity">
 
     <ImageButton
@@ -16,7 +17,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/back_icon" />
+        app:srcCompat="@drawable/back_icon_dark" />
+
+    <ImageButton
+        android:id="@+id/imageButtonDarkMode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/toggle_mode_dark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageButtonBack"
+        app:layout_constraintBottom_toBottomOf="@+id/imageButtonBack" />
 
     <TextView
         android:id="@+id/textViewStoryTitle"
@@ -113,7 +125,7 @@
             android:padding="2dp"
             android:text="This is my conten is my c conten is my cntent is is my content This is my content This is my content en is my c conten is my cntent is is my content This is my content This is my content en is my c conten is my cntent is is my content This is my content This is my content en is my c conten is my cntent is is my content This is my content This is my content en is my c conten is my cntent is is my content This is my content This is my content is is my content This is my content This is my content is is my content This is my content This is my content is is my content This is my content This is my content is is my content This is my content This is my content is is my content This is my content This is my content is is my content This is my content This is my content is is my content This is my content This is my content is is my content This is my content This is my content is is my content This is my content This is my content is is my content This is my content This is my content is is my content This is my content This is my content is is my content This is my content This is my content is is my content This is my content This is my content is is my content This is my content This is my content is is my content This is my content This is my content This is my content This is my content This is my content This is my content This is my content This is my content This is my content This is my content This is my content This is my content This is my content This is my content This is my content This is my content This is my content "
             android:textColor="@color/black"
-            android:textSize="12sp" />
+            android:textSize="14sp" />
 
     </ScrollView>
 
@@ -138,7 +150,7 @@
         android:layout_height="wrap_content"
         android:backgroundTint="@color/black"
         android:clickable="true"
-        android:tintMode="@color/white"
+        android:tintMode="@color/red"
         app:borderWidth="2dp"
         app:layout_constraintHorizontal_bias="0.95"
         app:layout_constraintVertical_bias="0.95"
@@ -147,6 +159,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:shapeAppearanceOverlay="@style/round"
-        app:srcCompat="@drawable/save_icon" />
+        app:srcCompat="@drawable/saved_icon" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

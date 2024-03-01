@@ -1,15 +1,15 @@
 package in.boimama.app.android.authentication;
 
-import static android.graphics.Color.RED;
 import static android.widget.Toast.makeText;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import in.boimama.app.android.R;
 import in.boimama.app.android.databinding.ActivityLoginBinding;
 import in.boimama.app.android.story.ListStoriesActivity;
 
@@ -30,12 +30,12 @@ public class LoginActivity extends AppCompatActivity {
                     if (userName.isEmpty()) {
                         // If text is empty, show an error message or take appropriate action
                         // binding.editTextGuestDisplayName.setError("Please enter your username!");
-                        binding.editTextUserName.setHintTextColor(ColorStateList.valueOf(RED));
+                        binding.editTextUserName.setHintTextColor(ColorStateList.valueOf(getColor(R.color.red)));
                         makeText(getApplicationContext(), "Please enter your username!", Toast.LENGTH_SHORT).show();
                     } else if (password.isEmpty()) {
                         // If text is empty, show an error message or take appropriate action
                         // binding.editTextGuestDisplayName.setError("Please enter your password!");
-                        binding.editTextPassword.setHintTextColor(ColorStateList.valueOf(RED));
+                        binding.editTextPassword.setHintTextColor(ColorStateList.valueOf(getColor(R.color.red)));
                         makeText(getApplicationContext(), "Please enter your password!", Toast.LENGTH_SHORT).show();
                     } else if (userName.equalsIgnoreCase("admin") && password.equalsIgnoreCase("admin")) {
                         makeText(getApplicationContext(), "Success!", Toast.LENGTH_SHORT).show();

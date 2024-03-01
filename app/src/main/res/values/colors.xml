@@ -11,4 +11,9 @@
     <color name="app_light_grey">#EFEFEF</color>
     <color name="app_blue">#667FEA</color>
 
+    <!-- Dark theme colors -->
+    <color name="app_dark_background">#2C344B</color>
+    <color name="app_dark_font">#D1D3DA</color>
+
+
 </resources>

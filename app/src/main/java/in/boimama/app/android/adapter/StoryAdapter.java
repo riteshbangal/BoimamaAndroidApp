@@ -1,16 +1,11 @@
 package in.boimama.app.android.adapter;
 
-import static android.widget.Toast.makeText;
-
-import static androidx.core.content.ContextCompat.startActivity;
-
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
@@ -26,7 +21,6 @@ import java.util.List;
 import in.boimama.app.android.R;
 import in.boimama.app.android.databinding.StoryItemBinding;
 import in.boimama.app.android.model.StoryItemModel;
-import in.boimama.app.android.story.ListStoriesActivity;
 import in.boimama.app.android.story.ReadStoryActivity;
 
 public class StoryAdapter extends RecyclerView.Adapter<StoryAdapter.StoryViewHolder> {

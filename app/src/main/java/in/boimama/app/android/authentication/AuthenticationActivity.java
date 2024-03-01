@@ -2,13 +2,11 @@ package in.boimama.app.android.authentication;
 
 import static android.widget.Toast.makeText;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
-import in.boimama.app.android.SplashActivity;
+import androidx.appcompat.app.AppCompatActivity;
 
 import in.boimama.app.android.databinding.ActivityAuthenticationBinding;
 
