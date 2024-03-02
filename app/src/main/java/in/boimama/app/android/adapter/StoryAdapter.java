@@ -52,6 +52,12 @@ public class StoryAdapter extends RecyclerView.Adapter<StoryAdapter.StoryViewHol
         return items.size();
     }
 
+    public void updateData(List<StoryItemModel> newData) {
+        this.items = newData;
+        notifyDataSetChanged();
+    }
+
+
     public class StoryViewHolder extends RecyclerView.ViewHolder {
 
         private final StoryItemBinding binding;

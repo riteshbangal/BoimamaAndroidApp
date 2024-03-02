@@ -3,6 +3,9 @@ package in.boimama.app.android.model;
 import java.io.Serializable;
 
 public class StoryItemModel implements Serializable {
+
+    private String id;
+
     private String title;
 
     private String content;
@@ -17,6 +20,13 @@ public class StoryItemModel implements Serializable {
 
     private String imageUrl;
 
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public String getTitle() {
         return title;
@@ -77,7 +87,8 @@ public class StoryItemModel implements Serializable {
     @Override
     public String toString() {
         return "StoryItemModel{" +
-                "title='" + title + '\'' +
+                "id='" + id + '\'' +
+                ", title='" + title + '\'' +
                 ", content='" + content + '\'' +
                 ", author='" + author + '\'' +
                 ", length=" + length +

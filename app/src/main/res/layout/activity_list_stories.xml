@@ -82,16 +82,24 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewLatestStoriesHeading" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewStories"
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="15dp"
-        tools:listitem="@layout/story_item"
+        android:layout_marginTop="10dp"
         app:layout_constraintBottom_toBottomOf="@+id/imageViewBackground"
         app:layout_constraintEnd_toEndOf="@+id/searchViewSearchStories"
         app:layout_constraintStart_toStartOf="@+id/searchViewSearchStories"
-        app:layout_constraintTop_toBottomOf="@+id/searchViewSearchStories" />
+        app:layout_constraintTop_toBottomOf="@+id/searchViewSearchStories">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewStories"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:paddingBottom="15dp"
+            tools:listitem="@layout/story_item" />
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floatingButtonAddStory"
@@ -109,5 +117,15 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/create_icon" />
+
+    <ProgressBar
+        android:id="@+id/progressBarLoadData"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerInParent="true"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewBackground"
+        app:layout_constraintEnd_toEndOf="@+id/searchViewSearchStories"
+        app:layout_constraintStart_toStartOf="@+id/searchViewSearchStories"
+        app:layout_constraintTop_toBottomOf="@+id/searchViewSearchStories" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
