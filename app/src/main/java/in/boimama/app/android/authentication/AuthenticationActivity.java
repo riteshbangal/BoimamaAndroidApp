@@ -6,11 +6,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import in.boimama.app.android.AppActivity;
 import in.boimama.app.android.databinding.ActivityAuthenticationBinding;
 
-public class AuthenticationActivity extends AppCompatActivity {
+public class AuthenticationActivity extends AppActivity {
 
     private ActivityAuthenticationBinding binding;
 

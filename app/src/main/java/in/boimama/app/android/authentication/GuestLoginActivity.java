@@ -7,13 +7,12 @@ import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import in.boimama.app.android.AppActivity;
 import in.boimama.app.android.R;
 import in.boimama.app.android.databinding.ActivityGuestLoginBinding;
 import in.boimama.app.android.story.ListStoriesActivity;
 
-public class GuestLoginActivity extends AppCompatActivity {
+public class GuestLoginActivity extends AppActivity {
 
     private ActivityGuestLoginBinding binding;
 

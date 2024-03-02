@@ -7,7 +7,6 @@
  import android.view.View;
  import android.widget.Toast;
 
- import androidx.appcompat.app.AppCompatActivity;
  import androidx.recyclerview.widget.LinearLayoutManager;
  import androidx.recyclerview.widget.RecyclerView;
  import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
@@ -23,18 +22,20 @@
  import java.util.ArrayList;
  import java.util.List;
 
+ import in.boimama.app.android.AppActivity;
  import in.boimama.app.android.adapter.StoryAdapter;
  import in.boimama.app.android.databinding.ActivityListStoriesBinding;
  import in.boimama.app.android.model.StoryItemModel;
  import in.boimama.app.android.utils.ModelMapperHelper;
 
- public class ListStoriesActivity extends AppCompatActivity {
+ public class ListStoriesActivity extends AppActivity {
 
      private ActivityListStoriesBinding binding;
 
      @Override
     protected void onCreate(Bundle savedInstanceState) {
          super.onCreate(savedInstanceState);
+
          binding = ActivityListStoriesBinding.inflate(getLayoutInflater());
          setContentView(binding.getRoot());
 
