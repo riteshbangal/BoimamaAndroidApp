@@ -108,12 +108,14 @@
         app:layout_constraintTop_toBottomOf="@+id/cardViewAuthorImage" />
 
     <ScrollView
+        android:id="@+id/scrollViewStoryContent"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="15dp"
         app:layout_constraintEnd_toEndOf="@+id/dividerStoryCard"
         app:layout_constraintStart_toStartOf="@+id/dividerStoryCard"
-        app:layout_constraintTop_toBottomOf="@id/dividerStoryCard">
+        app:layout_constraintTop_toBottomOf="@id/dividerStoryCard"
+        app:layout_constraintHeight_percent="0.75">
 
         <TextView
             android:id="@+id/textViewStoryContent"
@@ -123,7 +125,7 @@
             android:letterSpacing="0.02"
             android:lineHeight="22sp"
             android:padding="2dp"
-            android:text="This is my conten is my c conten is my cntent is is my content This is my content This is my content en is my c conten is my cntent is is my content This is my content This is my content en is my c conten is my cntent is is my content This is my content This is my content en is my c conten is my cntent is is my content This is my content This is my content en is my c conten is my cntent is is my content This is my content This is my content is is my content This is my content This is my content is is my content This is my content This is my content is is my content This is my content This is my content is is my content This is my content This is my content is is my content This is my content This is my content is is my content This is my content This is my content is is my content This is my content This is my content is is my content This is my content This is my content is is my content This is my content This is my content is is my content This is my content This is my content is is my content This is my content This is my content is is my content This is my content This is my content is is my content This is my content This is my content is is my content This is my content This is my content is is my content This is my content This is my content This is my content This is my content This is my content This is my content This is my content This is my content This is my content This is my content This is my content This is my content This is my content This is my content This is my content This is my content This is my content "
+            android:text="This is my conten is hg ju jj hihi  my c conten is my cntent is is my content This is my content This is my content en is my c conten is my cntent is is my content This is my content This is my content en is my c conten is my cntent is is my content This is my content This is my content en is my c conten is my cntent is is my content This is my content This is my content en is my c conten is my cntent is is my content This is my content This is my content is is my content This is my content This is my content is is my content This is my content This is my content is is my content This is my content This is my content is is my content This is my content This is my content is is my content This is my content This is my content is is my content This is my content This is my content is is my content This is my content This is my content is is my content This is my content This is my content is is my content This is my content This is my content is is my content This is my content This is my content is is my content This is my content This is my content is is my content This is my content This is my content is is my content This is my content This is my content is is my content This is my content This is my content is is my content This is my content This is my content This is my content This is my content This is my content This is my content This is my content This is my content This is my content This is my content This is my content This is my content This is my content This is my content This is my content This is my content This is my content lol"
             android:textColor="@color/black"
             android:textSize="14sp" />
 
