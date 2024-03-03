@@ -18,4 +18,8 @@
     <string name="textViewStoryTitle"> This is my first story tis my first story tis my first story tis my first story tis my first story tis my first story title </string>
     <string name="buttonReadMore">Read More</string>
     <string name="textViewLikesCount">20</string>
+
+    <string name="open_nav">Open navigation drawer</string>
+    <string name="close_nav">Close navigation drawer</string>
+    <string name="textViewAboutUs">Welcome to our brand new website! We\'re thrilled to have you here and excited to share a little bit about ourselves with you. \n\nWe\'re a team of passionate individuals who came together with a shared goal of creating something special. Our mission is to provide you with the best possible experience, whether that\'s through the products we offer, the services we provide, or the content we create. \n\nAs a new website, we understand that we have a lot to prove. That\'s why we\'re committed to delivering exceptional quality and value in everything we do. We\'re constantly exploring new ideas and pushing ourselves to be better, so that we can exceed your expectations and earn your trust. \n\nBut we\'re not just about business - we\'re also a group of people who care deeply about our community and the world around us. That\'s why we\'re dedicated to operating in an ethical and sustainable manner, and why we believe in giving back to those in need. \n\nThank you for taking the time to learn about us. We hope you\'ll join us on this journey as we continue to grow and evolve. \n\n\n</string>
 </resources>

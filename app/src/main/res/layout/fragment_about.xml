@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".AboutFragment">
+
+    <ImageView
+        android:id="@+id/imageViewBannerLogo"
+        android:layout_width="320dp"
+        android:layout_height="125dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/boimama_banner_logo" />
+
+    <View
+        android:id="@+id/dividerStoryCard"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewBannerLogo" />
+
+    <ScrollView
+        android:id="@+id/scrollViewStoryContent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintEnd_toEndOf="@+id/dividerStoryCard"
+        app:layout_constraintStart_toStartOf="@+id/dividerStoryCard"
+        app:layout_constraintTop_toBottomOf="@id/dividerStoryCard"
+        app:layout_constraintHeight_percent="0.70">
+
+        <TextView
+            android:id="@+id/textViewAboutUs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="@string/textViewAboutUs"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:fontFamily="@font/inter"
+            android:letterSpacing="0.02"
+            android:lineHeight="20sp" />
+
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/appDesignerText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/love_ya_like_a_sister"
+        android:gravity="center"
+        android:text="@string/appDesignerText"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/scrollViewStoryContent"
+        app:layout_constraintStart_toStartOf="@+id/scrollViewStoryContent"
+        app:layout_constraintTop_toBottomOf="@id/scrollViewStoryContent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
