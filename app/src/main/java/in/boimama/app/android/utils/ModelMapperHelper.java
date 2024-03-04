@@ -32,6 +32,14 @@ public class ModelMapperHelper {
             authorNames.add(authorNamesArray.getString(j));
         }
 
+        // Parse the "authorIds" array
+        List<String> authorIds = new ArrayList<>();
+        JSONArray authorIdsArray = storyObject.getJSONArray("authorIds");
+        for (int j = 0; j < authorIdsArray.length(); j++) {
+            authorIds.add(authorIdsArray.getString(j));
+        }
+
+
         // Create a StoryItemModel object and add it to the list
         StoryItemModel story = new StoryItemModel();
         story.setId(id);
@@ -41,7 +49,8 @@ public class ModelMapperHelper {
         story.setPublishedDate(publishedDate);
         story.setLength(Integer.parseInt(lengthInMins));
         story.setNumberOfLikes(Integer.parseInt(rating));
-        story.setImageUrl("https://api-gw-dev.boimama.in" + imagePath);
+        story.setStoryImageUrl("https://api-gw-dev.boimama.in" + imagePath);
+        story.setAuthorImageUrl("https://api-gw-dev.boimama.in/author/" + authorIds.get(0) + "/image");
 
         return story;
     }

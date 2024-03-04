@@ -30,7 +30,6 @@ public class ReadStoryActivity extends AppActivity {
 
     boolean isLiked = false, isSaved = false;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,7 +43,7 @@ public class ReadStoryActivity extends AppActivity {
             binding.textViewStoryContent.setText(storyItemModel.getContent());
             binding.textViewStoryMetadata.setText(storyItemModel.getPublishedDate() + " . " + storyItemModel.getLength() + " mins");
             Glide.with(binding.imageViewAuthorImage.getContext())
-                    .load(storyItemModel.getImageUrl())
+                    .load(storyItemModel.getAuthorImageUrl())
                     .placeholder(R.drawable.no_image)
                     .error(R.drawable.no_image)
                     .listener(new RequestListener<Drawable>() {

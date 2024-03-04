@@ -75,7 +75,7 @@ public class StoryAdapter extends RecyclerView.Adapter<StoryAdapter.StoryViewHol
             binding.textViewLikesCount.setText(String.valueOf(storyItemModel.getNumberOfLikes()));
 
             Glide.with(binding.imageViewAuthorImage.getContext())
-                    .load(storyItemModel.getImageUrl())
+                    .load(storyItemModel.getAuthorImageUrl())
                     .placeholder(R.drawable.no_image)
                     .error(R.drawable.no_image)
                     .listener(new RequestListener<Drawable>() {

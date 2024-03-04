@@ -18,7 +18,9 @@ public class StoryItemModel implements Serializable {
 
     private int numberOfLikes;
 
-    private String imageUrl;
+    private String storyImageUrl;
+
+    private String authorImageUrl;
 
     public String getId() {
         return id;
@@ -76,12 +78,20 @@ public class StoryItemModel implements Serializable {
         this.numberOfLikes = numberOfLikes;
     }
 
-    public String getImageUrl() {
-        return imageUrl;
+    public String getStoryImageUrl() {
+        return storyImageUrl;
     }
 
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
+    public void setStoryImageUrl(String storyImageUrl) {
+        this.storyImageUrl = storyImageUrl;
+    }
+
+    public String getAuthorImageUrl() {
+        return authorImageUrl;
+    }
+
+    public void setAuthorImageUrl(String authorImageUrl) {
+        this.authorImageUrl = authorImageUrl;
     }
 
     @Override
@@ -91,10 +101,11 @@ public class StoryItemModel implements Serializable {
                 ", title='" + title + '\'' +
                 ", content='" + content + '\'' +
                 ", author='" + author + '\'' +
-                ", length=" + length +
+                ", length=" + length + '\'' +
                 ", publishedDate='" + publishedDate + '\'' +
-                ", numberOfLikes=" + numberOfLikes +
-                ", imageUrl=" + imageUrl +
+                ", numberOfLikes=" + numberOfLikes + '\'' +
+                ", storyImageUrl=" + storyImageUrl + '\'' +
+                ", authorImageUrl=" + authorImageUrl +
                 '}';
     }
 }

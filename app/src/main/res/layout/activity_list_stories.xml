@@ -59,7 +59,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"
-                app:srcCompat="@drawable/author" />
+                app:srcCompat="@drawable/no_image" />
 
         </androidx.cardview.widget.CardView>
 
@@ -78,20 +78,26 @@
             app:srcCompat="@drawable/saved_icon"
             android:visibility="invisible"/>
 
-        <SearchView
+        <androidx.appcompat.widget.SearchView
             android:id="@+id/searchViewSearchStories"
             android:layout_width="0dp"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="0dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="20dp"
             android:background="@drawable/search_shape"
+            android:elevation="5dp"
             android:iconifiedByDefault="false"
             android:queryHint="Search Stories"
             android:searchIcon="@drawable/search"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/toolbarMenu" />
+            app:layout_constraintTop_toBottomOf="@+id/toolbarMenu"
+            app:defaultQueryHint="Search Stories"
+            app:iconifiedByDefault="false"
+            app:queryBackground="@android:color/transparent"
+            app:queryHint="Search Stories"
+            app:searchIcon="@drawable/search" />
 
         <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
             android:id="@+id/swipeRefreshLayout"
@@ -149,7 +155,6 @@
         app:headerLayout="@layout/nav_header"
         app:menu="@menu/nav_menu"
         app:itemTextColor="@color/blue">
-
         <include layout="@layout/nav_footer" />
 
     </com.google.android.material.navigation.NavigationView>

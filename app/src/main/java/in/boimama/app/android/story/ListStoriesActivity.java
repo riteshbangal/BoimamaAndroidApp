@@ -37,6 +37,7 @@
  import in.boimama.app.android.adapter.StoryAdapter;
  import in.boimama.app.android.databinding.ActivityListStoriesBinding;
  import in.boimama.app.android.model.StoryItemModel;
+ import in.boimama.app.android.user.ProfileActivity;
  import in.boimama.app.android.utils.ModelMapperHelper;
 
  public class ListStoriesActivity extends AppActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -79,10 +80,8 @@
                      makeText(getApplicationContext(), "This feature is coming soon", Toast.LENGTH_SHORT).show();
                  });
 
-//         binding.recyclerViewStories.getFocusedChild() // TODO
-//                 .setOnClickListener(view -> {
-//                     new Intent(this, ReadStoryActivity.class);
-//                 });
+         binding.cardViewProfileImage
+                 .setOnClickListener(view -> startActivity(new Intent(this, ProfileActivity.class)));
 
     }
 
