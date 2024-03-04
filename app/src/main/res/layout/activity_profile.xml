@@ -105,7 +105,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
-            android:drawableStart="@drawable/book_icon"
+            android:drawableStart="@drawable/reading_icon"
             android:drawablePadding="10dp"
             android:fontFamily="@font/inter"
             android:textAllCaps="false"
