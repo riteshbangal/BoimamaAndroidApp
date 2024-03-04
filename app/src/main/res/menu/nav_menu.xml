@@ -8,22 +8,43 @@
 
         <item
             android:id="@+id/nav_home"
-            android:icon="@drawable/my_articles_icon"
+            android:icon="@drawable/home_icon"
             android:title="Home"/>
 
         <item
+            android:id="@+id/saved_stories"
+            android:icon="@drawable/saved_list"
+            android:title="Saved Stories"/>
+
+        <item
             android:id="@+id/nav_about"
-            android:icon="@drawable/like_icon"
+            android:icon="@drawable/about_us_icon"
             android:title="About Us"/>
+
+        <item
+            android:id="@+id/nav_contact"
+            android:icon="@drawable/contact_icon"
+            android:title="Contact Us"/>
     </group>
     <item
-        android:title="">
+        android:title="Topics">
 
         <menu>
             <item
-                android:id="@+id/nav_logout"
-                android:icon="@drawable/logout_icon"
-                android:title="Logout"/>
+                android:id="@+id/nav_social_story"
+                android:icon="@drawable/social_icon"
+                android:title="সামাজিক"/>
+
+            <item
+                android:id="@+id/nav_long_story"
+                android:icon="@drawable/barogalpo_icon"
+                android:title="বড়গল্প"/>
+
+            <item
+                android:id="@+id/nav_short_story"
+                android:icon="@drawable/pen_paper_icon"
+                android:title="ছোট গল্প"/>
+
         </menu>
 
     </item>

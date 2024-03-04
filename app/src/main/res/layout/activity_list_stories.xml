@@ -11,6 +11,7 @@
     tools:context=".story.ListStoriesActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/containerLayoutStoriesWindow"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
@@ -39,7 +40,7 @@
         <FrameLayout
             android:id="@+id/fragmentContainer"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"/>
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardViewProfileImage"
@@ -149,7 +150,7 @@
         app:menu="@menu/nav_menu"
         app:itemTextColor="@color/blue">
 
-        <include layout="@layout/nav_header" />
+        <include layout="@layout/nav_footer" />
 
     </com.google.android.material.navigation.NavigationView>
 

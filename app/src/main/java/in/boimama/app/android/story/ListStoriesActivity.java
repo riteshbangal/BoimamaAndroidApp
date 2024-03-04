@@ -1,6 +1,7 @@
  package in.boimama.app.android.story;
 
  import static android.widget.Toast.makeText;
+ import static in.boimama.app.android.utils.ApplicationConstants.EMPTY_STRING;
 
  import android.content.Intent;
  import android.os.AsyncTask;
@@ -91,17 +92,35 @@
 
          if (menuItemId == R.id.nav_home) {
              startActivity(new Intent(this, ListStoriesActivity.class));
-             //getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, new AboutFragment()).commit();
+         } else if (menuItemId == R.id.saved_stories) {
+             Toast.makeText(this, "This feature is coming soon!", Toast.LENGTH_SHORT).show();
          } else if (menuItemId == R.id.nav_about) {
+             hideStoriesActivityLaoyouts(); // View Overlapping Due to Layout Parameters. TODO: Better solution
              getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, new AboutFragment()).commit();
-         } else if (menuItemId == R.id.nav_logout) {
-             Toast.makeText(this, "Logout!", Toast.LENGTH_SHORT).show();
+         } else if (menuItemId == R.id.nav_contact) {
+             hideStoriesActivityLaoyouts(); // View Overlapping Due to Layout Parameters. TODO: Better solution
+             getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, new AboutFragment()).commit();
+         } else if (menuItemId == R.id.nav_social_story) {
+             startActivity(new Intent(this, ListStoriesActivity.class));
+         } else if (menuItemId == R.id.nav_long_story) {
+             startActivity(new Intent(this, ListStoriesActivity.class));
+         } else if (menuItemId == R.id.nav_short_story) {
+             startActivity(new Intent(this, ListStoriesActivity.class));
          } else {
-             System.out.println(item.getItemId());
+             Toast.makeText(this, "Something went wrong!", Toast.LENGTH_SHORT).show();
          }
 
          binding.drawerLayoutStoriesWindow.closeDrawer(GravityCompat.START);
          return true;
+     }
+
+     private void hideStoriesActivityLaoyouts() {
+         Objects.requireNonNull(getSupportActionBar()).setTitle(EMPTY_STRING);
+         binding.cardViewProfileImage.setVisibility(View.INVISIBLE);
+         binding.imageButtonSaveStories.setVisibility(View.INVISIBLE);
+         binding.searchViewSearchStories.setVisibility(View.INVISIBLE);
+         binding.swipeRefreshLayout.setVisibility(View.INVISIBLE);
+         binding.floatingButtonAddStory.setVisibility(View.INVISIBLE);
      }
 
      @Override
