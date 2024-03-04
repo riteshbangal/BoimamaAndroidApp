@@ -5,10 +5,7 @@ import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
@@ -115,13 +112,6 @@ public class StoryAdapter extends RecyclerView.Adapter<StoryAdapter.StoryViewHol
                     })
                     .into(binding.imageViewAuthorImage);
 
-            binding.frameLayoutStoryShortContent.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    toggleViews();
-                }
-            });
-
             // Set on click listener
             binding.buttonReadMore.setOnClickListener(view -> {
                 Context context = binding.getRoot().getContext();
@@ -129,21 +119,6 @@ public class StoryAdapter extends RecyclerView.Adapter<StoryAdapter.StoryViewHol
                 intent.putExtra("storyItemModel", storyItemModel);
                 context.startActivity(intent);
             });
-        }
-
-        private void toggleViews() {
-            final TextView textViewStory = binding.textViewStoryShortContent;
-            final ImageView imageViewStory = binding.imageViewStory;
-
-            if (textViewStory.getVisibility() == View.VISIBLE) {
-                // If TextView is visible, hide it and show ImageView
-                textViewStory.setVisibility(View.INVISIBLE);
-                imageViewStory.setVisibility(View.VISIBLE);
-            } else {
-                // If ImageView is visible, hide it and show TextView
-                textViewStory.setVisibility(View.VISIBLE);
-                imageViewStory.setVisibility(View.INVISIBLE);
-            }
         }
     }
 }
