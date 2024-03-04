@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:elevation="5dp"
     android:layout_width="match_parent"
-    android:layout_height="265dp"
+    android:layout_height="300dp"
     android:layout_marginTop="8dp"
     app:cardCornerRadius="8dp">
 
@@ -22,7 +22,7 @@
             android:maxLines="2"
             android:text="@string/textViewStoryTitle"
             android:textColor="@color/blue"
-            android:textSize="16sp"
+            android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -87,22 +87,37 @@
             app:layout_constraintStart_toStartOf="@+id/textViewStoryTitle"
             app:layout_constraintTop_toBottomOf="@id/textViewStoryMetadata" />
 
-
-        <TextView
-            android:id="@+id/textViewStoryShortContent"
+        <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/frameLayoutStoryShortContent"
             android:layout_width="0dp"
-            android:layout_height="100dp"
-            android:layout_marginTop="10dp"
-            android:fontFamily="@font/inter"
-            android:letterSpacing="0.02"
-            android:lineHeight="22sp"
-            android:maxLines="4"
-            android:text="This is my content This is my content This is my content This is my content This is my content This is my content This is my content This is my content This is my content This is my content This is my content This is my content This is my content This is my content This is my content This is my content This is my content This is my content This is my content This is my content This is my content "
-            android:textColor="@color/black"
-            android:textSize="12sp"
+            android:layout_height="170dp"
             app:layout_constraintEnd_toEndOf="@+id/dividerStoryCard"
             app:layout_constraintStart_toStartOf="@+id/dividerStoryCard"
-            app:layout_constraintTop_toBottomOf="@id/dividerStoryCard" />
+            app:layout_constraintTop_toBottomOf="@id/dividerStoryCard">
+
+            <TextView
+                android:id="@+id/textViewStoryShortContent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/inter"
+                android:letterSpacing="0.02"
+                android:lineHeight="22sp"
+                android:maxLines="6"
+                android:text="This is my content This is my content This is my content This is my content This is my content This is my content This is my content This is my content This is my content This is my content This is my content This is my content This is my content This is my content This is my content This is my content This is my content This is my content This is my content This is my content This is my content "
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:visibility="visible"/>
+
+            <ImageView
+                android:id="@+id/imageViewStory"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/no_image"
+                android:visibility="invisible" />
+
+        </FrameLayout>
 
         <Button
             android:id="@+id/buttonReadMore"
@@ -112,8 +127,8 @@
             android:text="@string/buttonReadMore"
             app:cornerRadius="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/textViewStoryShortContent"
-            app:layout_constraintTop_toBottomOf="@id/textViewStoryShortContent" />
+            app:layout_constraintStart_toStartOf="@+id/frameLayoutStoryShortContent"
+            app:layout_constraintTop_toBottomOf="@id/frameLayoutStoryShortContent" />
 
         <ImageButton
             android:id="@+id/imageButtonSaveUnsaveStory"
@@ -121,7 +136,7 @@
             android:layout_height="35dp"
             android:background="@android:color/transparent"
             app:layout_constraintBottom_toBottomOf="@+id/buttonReadMore"
-            app:layout_constraintEnd_toEndOf="@+id/textViewStoryShortContent"
+            app:layout_constraintEnd_toEndOf="@+id/frameLayoutStoryShortContent"
             app:layout_constraintTop_toTopOf="@+id/buttonReadMore"
             app:srcCompat="@drawable/saved_icon" />
 
