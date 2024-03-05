@@ -6,13 +6,17 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 
+import in.boimama.app.android.authentication.GuestLoginActivity;
 import in.boimama.app.android.databinding.ActivitySplashBinding;
+import in.boimama.app.android.model.UserDataModel;
 import in.boimama.app.android.story.ListStoriesActivity;
 
 @SuppressLint("CustomSplashScreen")
 public class SplashActivity extends AppActivity {
 
     private ActivitySplashBinding binding;
+
+    private UserDataModel userDataModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,11 +25,18 @@ public class SplashActivity extends AppActivity {
         binding = ActivitySplashBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        new Handler(Looper.getMainLooper())
-                .postDelayed(() -> startActivity(
-                        // new Intent(this, AuthenticationActivity.class) // TODO: Temporary
-                         new Intent(this, ListStoriesActivity.class)
-                ), 1000);
+
+        if (userDataModel == null) {
+            new Handler(Looper.getMainLooper())
+                    .postDelayed(() -> startActivity(
+                            new Intent(this, GuestLoginActivity.class)
+                    ), 1000);
+        } else {
+            new Handler(Looper.getMainLooper())
+                    .postDelayed(() -> startActivity(
+                            new Intent(this, ListStoriesActivity.class)
+                    ), 1000);
+        }
 
         binding.imageViewBannerLogo
                 .setOnClickListener(view -> {

@@ -22,22 +22,55 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardViewProfileImage"
+        android:id="@+id/cardViewProfileImageContainer"
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:layout_marginTop="50dp"
-        app:cardCornerRadius="100dp"
+        android:backgroundTint="@android:color/transparent"
+        app:cardCornerRadius="0dp"
+        app:cardElevation="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:id="@+id/imageViewProfileImage"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="centerCrop"
-            app:srcCompat="@drawable/no_image" />
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageViewEditIcon"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_gravity="bottom|end"
+                android:layout_marginEnd="12dp"
+                android:layout_marginBottom="1dp"
+                android:forceHasOverlappingRendering="true"
+                android:src="@drawable/camera_icon"
+                android:tint="@color/app_light_grey" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewProfileImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:cardCornerRadius="100dp"
+                app:cardElevation="0dp"
+                android:backgroundTint="@android:color/transparent"
+                app:borderWidth="0dp"
+                app:shapeAppearanceOverlay="@style/round">
+
+                <ImageView
+                    android:id="@+id/imageViewProfileImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/author" />
+            </androidx.cardview.widget.CardView>
+
+        </RelativeLayout>
 
     </androidx.cardview.widget.CardView>
 
@@ -50,9 +83,9 @@
         android:text="@string/textViewUserDisplayName"
         android:textColor="@color/white"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="@+id/cardViewProfileImage"
-        app:layout_constraintStart_toStartOf="@+id/cardViewProfileImage"
-        app:layout_constraintTop_toBottomOf="@+id/cardViewProfileImage" />
+        app:layout_constraintEnd_toEndOf="@+id/cardViewProfileImageContainer"
+        app:layout_constraintStart_toStartOf="@+id/cardViewProfileImageContainer"
+        app:layout_constraintTop_toBottomOf="@+id/cardViewProfileImageContainer" />
 
     <View
         android:id="@+id/dividerProfileCard"
@@ -61,16 +94,16 @@
         android:layout_marginTop="15dp"
         android:background="?android:attr/listDivider"
         android:backgroundTint="@color/white"
-        app:layout_constraintEnd_toEndOf="@+id/cardViewProfileImage"
-        app:layout_constraintStart_toStartOf="@+id/cardViewProfileImage"
+        app:layout_constraintEnd_toEndOf="@+id/cardViewProfileImageContainer"
+        app:layout_constraintStart_toStartOf="@+id/cardViewProfileImageContainer"
         app:layout_constraintTop_toBottomOf="@+id/textViewUserDisplayName" />
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="@+id/cardViewProfileImage"
-        app:layout_constraintStart_toStartOf="@+id/cardViewProfileImage"
+        app:layout_constraintEnd_toEndOf="@+id/cardViewProfileImageContainer"
+        app:layout_constraintStart_toStartOf="@+id/cardViewProfileImageContainer"
         app:layout_constraintTop_toBottomOf="@+id/dividerProfileCard">
 
         <androidx.appcompat.widget.AppCompatButton

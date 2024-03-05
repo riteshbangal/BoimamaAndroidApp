@@ -38,8 +38,9 @@ public class GuestLoginActivity extends AppActivity {
                 });
 
         binding.buttonLogin
-                .setOnClickListener(view -> startActivity(
-                        new Intent(this, LoginActivity.class))
-                );
+                .setOnClickListener(view -> {
+                    // startActivity(new Intent(this, LoginActivity.class));
+                    makeText(getApplicationContext(), "This feature is coming soon", Toast.LENGTH_SHORT).show();
+                });
     }
 }
