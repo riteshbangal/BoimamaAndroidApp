@@ -1,5 +1,9 @@
 package in.boimama.app.android.utils;
 
+import static in.boimama.app.android.utils.ApplicationUtils.isEmpty;
+
+import android.content.SharedPreferences;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -8,6 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import in.boimama.app.android.model.StoryItemModel;
+import in.boimama.app.android.model.UserDataModel;
 
 public class ModelMapperHelper {
 
@@ -53,5 +58,23 @@ public class ModelMapperHelper {
         story.setAuthorImageUrl("https://api-gw-dev.boimama.in/author/" + authorIds.get(0) + "/image");
 
         return story;
+    }
+
+    public UserDataModel getUserDataModel(final SharedPreferences preferences) {
+        final UserDataModel userDataModel = new UserDataModel();
+        userDataModel.setDisplayName(preferences.getString("userDisplayName", null));
+        userDataModel.setProfileImageUrl(preferences.getString("userProfileImagePath", null));
+        return userDataModel;
+    }
+
+    public void setUserDataModel(final SharedPreferences preferences, String pDisplayName, String pProfileImage) {
+        final SharedPreferences.Editor editor = preferences.edit();
+        if (isEmpty(pDisplayName))
+            editor.putString("userDisplayName", pDisplayName);
+
+        if (isEmpty(pProfileImage))
+            editor.putString("userProfileImagePath", pProfileImage);
+
+        editor.apply();
     }
 }

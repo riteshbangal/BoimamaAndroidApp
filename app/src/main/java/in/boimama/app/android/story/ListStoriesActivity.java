@@ -4,19 +4,28 @@
  import static in.boimama.app.android.utils.ApplicationConstants.EMPTY_STRING;
 
  import android.content.Intent;
+ import android.content.SharedPreferences;
+ import android.graphics.drawable.Drawable;
  import android.os.AsyncTask;
  import android.os.Bundle;
+ import android.util.Log;
  import android.view.MenuItem;
  import android.view.View;
  import android.widget.Toast;
 
  import androidx.annotation.NonNull;
+ import androidx.annotation.Nullable;
  import androidx.appcompat.app.ActionBarDrawerToggle;
  import androidx.core.view.GravityCompat;
  import androidx.recyclerview.widget.LinearLayoutManager;
  import androidx.recyclerview.widget.RecyclerView;
  import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+ import com.bumptech.glide.Glide;
+ import com.bumptech.glide.load.DataSource;
+ import com.bumptech.glide.load.engine.GlideException;
+ import com.bumptech.glide.request.RequestListener;
+ import com.bumptech.glide.request.target.Target;
  import com.google.android.material.navigation.NavigationView;
 
  import org.json.JSONArray;
@@ -44,12 +53,15 @@
 
      private ActivityListStoriesBinding binding;
 
+     private SharedPreferences preferences;
+
      @Override
     protected void onCreate(Bundle savedInstanceState) {
          super.onCreate(savedInstanceState);
 
          binding = ActivityListStoriesBinding.inflate(getLayoutInflater());
          setContentView(binding.getRoot());
+         preferences = getSharedPreferences("my_preferences", MODE_PRIVATE);
 
          setSupportActionBar(binding.toolbarMenu);
          Objects.requireNonNull(getSupportActionBar()).setTitle("Latest Stories");
@@ -83,7 +95,32 @@
          binding.cardViewProfileImage
                  .setOnClickListener(view -> startActivity(new Intent(this, ProfileActivity.class)));
 
+
+         // String userDisplayName = preferences.getString("userDisplayName", null);
+         setProfileImage(preferences.getString("userProfileImagePath", null));
     }
+
+     private void setProfileImage(String pImagePath) {
+         Glide.with(binding.imageViewProfileImage.getContext())
+             .load(pImagePath)
+             .placeholder(R.drawable.no_image)
+             .error(R.drawable.no_image)
+             .listener(new RequestListener<Drawable>() {
+                 @Override
+                 public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {
+                     Log.e("Glide", "Image load failed: " + e.getMessage());
+                     return false;
+                 }
+
+                 @Override
+                 public boolean onResourceReady(Drawable resource, Object model, Target<Drawable> target, DataSource dataSource, boolean isFirstResource) {
+                     Log.d("Glide", "Image loaded successfully");
+                     return false;
+                 }
+             })
+             //.apply(RequestOptions.circleCropTransform())
+             .into(binding.imageViewProfileImage);
+     }
 
      @Override
      public boolean onNavigationItemSelected(@NonNull MenuItem item) {
