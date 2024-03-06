@@ -2,6 +2,8 @@ package in.boimama.app.android.user;
 
 import static android.widget.Toast.makeText;
 
+import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
@@ -10,6 +12,10 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
+import android.view.KeyEvent;
+import android.view.View;
+import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -38,6 +44,7 @@ public class ProfileActivity extends AppActivity {
 
     public static final int PICK_IMAGE_REQUEST_CODE = 1;
 
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,6 +69,46 @@ public class ProfileActivity extends AppActivity {
         binding.imageButtonClose
                 .setOnClickListener(view -> startActivity(new Intent(this, ListStoriesActivity.class)));
 
+        // Set initial visibility of edit display name section
+        binding.userDisplayNameContainer.setVisibility(View.VISIBLE);
+        binding.editIconDisplayName.setVisibility(View.VISIBLE);
+        binding.editTextUserDisplayName.setVisibility(View.INVISIBLE);
+
+        // Set click listener for the edit icon
+        binding.userDisplayNameContainer.setOnClickListener(view -> toggleVisibility()); // Toggle visibility of TextView, EditIcon and EditText
+
+        // Set OnEditorActionListener for the EditText
+        binding.editTextUserDisplayName.setOnEditorActionListener((view, actionId, event) -> {
+            if (actionId == EditorInfo.IME_ACTION_DONE || (event != null && event.getKeyCode() == KeyEvent.KEYCODE_ENTER)) {
+                // updateUserProfileDisplayName("userDisplayName", binding.textViewUserDisplayName.getText().toString());
+                final SharedPreferences.Editor editor = preferences.edit();
+                editor.putString(userDisplayName, binding.textViewUserDisplayName.getText().toString());
+                editor.apply();
+
+                toggleVisibility(); // Switch back to non-editable mode
+                hideKeyboard(); // Hide the keyboard
+                makeText(getApplicationContext(), "Name updated!", Toast.LENGTH_SHORT).show();
+                return true;
+            }
+            return false;
+        });
+
+        // Set OnTouchListener for the main layout to detect clicks outside the EditText
+        binding.constraintlayoutProfile.setOnTouchListener((view, event) -> {
+            // updateUserProfileDisplayName("userDisplayName", binding.textViewUserDisplayName.getText().toString());
+            final SharedPreferences.Editor editor = preferences.edit();
+            editor.putString(userDisplayName, binding.textViewUserDisplayName.getText().toString());
+            editor.apply();
+
+            // Switch back to non-editable mode when clicking outside
+            binding.textViewUserDisplayName.setVisibility(View.VISIBLE);
+            binding.editIconDisplayName.setVisibility(View.VISIBLE);
+            binding.editTextUserDisplayName.setVisibility(View.INVISIBLE);
+            hideKeyboard(); // Hide the keyboard
+            // makeText(getApplicationContext(), "Name updated!", Toast.LENGTH_SHORT).show(); // TODO: Add condition for text change
+            return false;
+        });
+
         binding.appCompatButtonAddStory.setOnClickListener(view -> makeText(getApplicationContext(),
                 "This feature is coming soon", Toast.LENGTH_SHORT).show());
 
@@ -70,6 +117,38 @@ public class ProfileActivity extends AppActivity {
 
         binding.appCompatButtonStartReading
                 .setOnClickListener(view -> startActivity(new Intent(this, ListStoriesActivity.class)));
+    }
+
+    private void updateUserProfileDisplayName(String userDisplayName, String textViewUserDisplayName) {
+        final SharedPreferences.Editor editor = preferences.edit();
+        editor.putString(userDisplayName, textViewUserDisplayName);
+        editor.apply();
+    }
+
+    private void toggleVisibility() {
+        if (binding.textViewUserDisplayName.getVisibility() == View.VISIBLE) {
+            // Switch to editable mode
+            binding.textViewUserDisplayName.setVisibility(View.INVISIBLE);
+            binding.editIconDisplayName.setVisibility(View.INVISIBLE);
+            binding.editTextUserDisplayName.setVisibility(View.VISIBLE);
+
+            // Set the initial text from TextView to EditText
+            binding.editTextUserDisplayName.setText(binding.textViewUserDisplayName.getText());
+            binding.editTextUserDisplayName.requestFocus(); // Set focus to the EditText
+        } else {
+            // Switch back to non-editable mode
+            binding.textViewUserDisplayName.setVisibility(View.VISIBLE);
+            binding.editIconDisplayName.setVisibility(View.VISIBLE);
+            binding.editTextUserDisplayName.setVisibility(View.INVISIBLE);
+
+            // Update TextView with the new text from EditText
+            binding.textViewUserDisplayName.setText(binding.editTextUserDisplayName.getText());
+        }
+    }
+
+    private void hideKeyboard() {
+        InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        inputMethodManager.hideSoftInputFromWindow(binding.editTextUserDisplayName.getWindowToken(), 0);
     }
 
     @Override
@@ -86,9 +165,7 @@ public class ProfileActivity extends AppActivity {
                 File imageFile = createImageFile();
                 saveImageToFile(selectedImageUri, imageFile);
 
-                final SharedPreferences.Editor editor = preferences.edit();
-                editor.putString("userProfileImagePath", imageFile.getAbsolutePath());
-                editor.apply();
+                updateUserProfileDisplayName("userProfileImagePath", imageFile.getAbsolutePath());
 
                 setProfileImage(imageFile.getAbsolutePath());
                 makeText(getApplicationContext(), "Profile image updated", Toast.LENGTH_SHORT).show();
